@@ -145,6 +145,9 @@ export default function HeroAboutSection() {
             className="relative w-full"
             style={{ height: "350vh" }}
         >
+            {/* About anchor — placed at ~55% of section height where About content is visible */}
+            <div id="about" className="absolute left-0 w-0 h-0" style={{ top: "55%" }} />
+
             <div className="sticky top-0 w-full h-screen overflow-hidden">
 
                 {/* Canvas — frame animation rendered here */}
@@ -280,7 +283,6 @@ export default function HeroAboutSection() {
                 {/* ===== ABOUT CONTENT ===== */}
                 <div
                     ref={aboutRef}
-                    id="about"
                     className="absolute inset-0 z-10 flex items-center px-6"
                     style={{ opacity: 0, transform: "translateY(60px)", pointerEvents: "none" }}
                 >

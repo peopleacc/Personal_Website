@@ -1,0 +1,427 @@
+{
+  "version": "1.0",
+  "language": "id",
+  "total": 105,
+  "data": [
+    {
+      "q": "halo",
+      "a": "Halo juga der , nape ? "
+    },
+    {
+      "q": "hai",
+      "a": "Hai! hai hai halo, nape nih? "
+    },
+    {
+      "q": "hei",
+      "a": "Hei hei hei, kenapa der "
+    },
+    {
+      "q": "hello",
+      "a": "Hello! Welcome to my website Raisa Akmal Faridi's ! How can I help you?"
+    },
+    {
+      "q": "hi",
+      "a": "Hi there! 👋 how are you!"
+    },
+    {
+      "q": "hey",
+      "a": "Hey! Ada apa der? 🙌"
+    },
+    {
+      "q": "selamat pagi",
+      "a": "Selamat pagi! Selamat pagi juga sayang ! Ada yang bisa gw  bantu? "
+    },
+    {
+      "q": "selamat siang",
+      "a": "Selamat siang! juga ada yang bisa gw  bantu ? "
+    },
+    {
+      "q": "selamat malam",
+      "a": "Selamat malam! malam-malam gini lu mau nanya apa jir wkwkw?"
+    },
+    {
+      "q": "apa kabar",
+      "a": "alhamdullilah baik! gimana kabar lu baik juga gk. Ada yang bisa gw  bantu gk?"
+    },
+    {
+      "q": "good morning",
+      "a": "Good morning! Welcome to my Website. How can I help you sir? "
+    },
+    {
+      "q": "good evening",
+      "a": "Good evening! Feel free to ask me anything! "
+    },
+    {
+      "q": "ini website apa",
+      "a": "Ini adalah website portfolio personal milik gw  , sebelumnya perkenalkan nama gw  raisa akmal faridi, seorang Full Stack Developer. Website ini menampilkan informasi tentang skill, pengalaman kerja, project, dan cara menghubungi gw ."
+    },
+    {
+      "q": "website ini tentang apa",
+      "a": "Website ini adalah portfolio personal Raisa Akmal Faridi yang menampilkan profil, keahlian (skills), pengalaman kerja (experience), project-project yang pernah dikerjakan, serta chatbot interaktif untuk bertanya langsung. 🚀"
+    },
+    {
+      "q": "siapa pemilik website ini",
+      "a": "Website ini milik Raisa Akmal Faridi, seorang Full Stack Developer yang passionate dalam membangun aplikasi web dan mobile modern. 💻"
+    },
+    {
+      "q": "what is this website",
+      "a": "This is the personal portfolio website of Raisa Akmal Faridi, a Full Stack Developer. It showcases skills, work experience, projects, and an interactive chatbot! 🌐"
+    },
+    {
+      "q": "website ini dibuat pakai apa",
+      "a": "Website ini dibangun menggunakan Next.js dan Tailwind CSS, dengan animasi frame scroll yang premium dan desain dark theme modern. ✨"
+    },
+    {
+      "q": "teknologi website ini",
+      "a": "Website portfolio ini dibangun menggunakan Next.js (React framework), Tailwind CSS untuk styling, dan TypeScript. Desainnya menggunakan dark theme premium dengan animasi scroll berbasis frame. 🛠️"
+    },
+    {
+      "q": "siapa kamu",
+      "a": "gw adalah Raisa Akmal Faridi, seorang Full Stack Developer yang berfokus pada pengembangan aplikasi web yang modern, scalable, dan user-friendly. gw memiliki 3+ tahun pengalaman dan telah mengerjakan 20+ project! 💪"
+    },
+    {
+      "q": "siapa raisa akmal faridi",
+      "a": "Raisa Akmal Faridi adalah seorang Full Stack Developer yang passionate dalam membangun aplikasi web dan mobile modern. Dengan pengalaman di berbagai teknologi dan framework, Raisa selalu berusaha memberikan solusi terbaik dalam setiap project. 🚀"
+    },
+    {
+      "q": "ceritakan tentang dirimu",
+      "a": "gw Raisa Akmal Faridi, Full Stack Developer yang passionate dalam membangun aplikasi web dan mobile yang modern dan fungsional. gw berpengalaman menggunakan Laravel, JavaScript, dan framework modern untuk membangun solusi digital yang efisien. gw selalu tertarik mempelajari teknologi baru dan meningkatkan kualitas kode! 💻"
+    },
+    {
+      "q": "who are you",
+      "a": "I'm Raisa Akmal Faridi, a Full Stack Developer focused on building modern, scalable, and user-friendly web applications. I have 3+ years of experience and have completed 20+ projects! 💪"
+    },
+    {
+      "q": "tell me about yourself",
+      "a": "I'm Raisa Akmal Faridi, a passionate Full Stack Developer experienced in Laravel, JavaScript, and modern frameworks. I focus on building efficient and well-structured digital solutions. I'm always interested in learning new technologies! 🚀"
+    },
+    {
+      "q": "kamu developer apa",
+      "a": "gw adalah Full Stack Developer, yang berarti gw menguasai baik frontend (tampilan website) maupun backend (server, database, logika aplikasi). 🖥️"
+    },
+    {
+      "q": "about me",
+      "a": "Raisa Akmal Faridi adalah Full Stack Developer yang berfokus pada pengembangan aplikasi web modern, scalable, dan user-friendly. Berpengalaman menggunakan Laravel, JavaScript, dan framework modern. Memiliki 3+ tahun pengalaman, 20+ project, dan menguasai 10+ tech stack! 📊"
+    },
+    {
+      "q": "berapa lama pengalaman",
+      "a": "gw memiliki pengalaman lebih dari 3 tahun di bidang web development, pernah bekerja di berbagai perusahaan sebagai Full Stack Developer. 📅"
+    },
+    {
+      "q": "berapa project yang sudah dikerjakan",
+      "a": "gw telah mengerjakan lebih dari 20 project di berbagai bidang, mulai dari sistem manajemen, e-learning, company profile, hingga aplikasi mobile! 📂"
+    },
+    {
+      "q": "apa motivasi kamu",
+      "a": "gw percaya bahwa teknologi dapat mengubah dunia, dan gw ingin menjadi bagian dari perubahan tersebut melalui kode yang gw tulis. gw selalu tertarik mempelajari teknologi baru dan meningkatkan kualitas kode! 🌟"
+    },
+    {
+      "q": "visi kamu apa",
+      "a": "gw ingin terus berkontribusi dalam menciptakan produk digital yang memberikan nilai nyata bagi pengguna, dengan selalu meningkatkan kualitas kode dan mempelajari teknologi terbaru. 🎯"
+    },
+    {
+      "q": "apa saja skill kamu",
+      "a": "Skill gw meliputi:\n\n🔹 **Languages:** JavaScript (90%), PHP (82%), Kotlin (82%), Python (50%)\n🔹 **Frontend:** Tailwind CSS (90%), React (88%)\n🔹 **Full Stack Framework:** Next.js (88%), Laravel (82%)\n🔹 **Database:** MySQL (78%), PostgreSQL (78%)\n\nCek bagian Skills di website untuk detail lebih lanjut! 💻"
+    },
+    {
+      "q": "skill apa yang kamu kuasai",
+      "a": "gw   menguasai berbagai teknologi:\n• JavaScript (90%) - Language utama\n• Tailwind CSS (90%) - Styling framework\n• React & Next.js (88%) - Frontend & Full Stack\n• PHP & Laravel (82%) - Backend\n• Kotlin (82%) - Mobile development\n• MySQL & PostgreSQL (78%) - Database\n• Python (50%) - Scripting & AI 🔧"
+    },
+    {
+      "q": "what are your skills",
+      "a": "My tech stack includes:\n• JavaScript (90%), PHP (82%), Kotlin (82%), Python (50%)\n• Tailwind CSS (90%), React (88%), Next.js (88%)\n• Laravel (82%), MySQL (78%), PostgreSQL (78%) 💻"
+    },
+    {
+      "q": "bisa javascript",
+      "a": "bisa dong ! JavaScript adalah salah satu skill utama gw   dengan tingkat proficiency 90%. gw  menggunakan JavaScript untuk frontend (React, Next.js) maupun backend development. ⚡"
+    },
+    {
+      "q": "bisa php",
+      "a": "gampang cuk! PHP adalah salah satu bahasa utama gw  dengan proficiency 82%. gw  banyak menggunakannya bersama framework Laravel untuk membangun aplikasi web. cuma lemot dikit wkkw"
+    },
+    {
+      "q": "bisa laravel",
+      "a": "Tentu! Laravel adalah framework backend/frontend utama gw dengan proficiency 82%. gw menggunakannya untuk membangun berbagai sistem seperti Digitizing Visitor, Marketing Tracking System, dan Inventory Management. 🔧"
+    },
+    {
+      "q": "bisa react",
+      "a": "Ya! React adalah salah satu skill frontend utama gw dengan proficiency 88%. gw juga menguasai Next.js yang berbasis React. ⚛️"
+    },
+    {
+      "q": "bisa next.js",
+      "a": "Ya! Next.js adalah framework full stack favorit gw dengan proficiency 88%. Website portfolio ini pun dibangun dengan Next.js! 🚀"
+    },
+    {
+      "q": "bisa kotlin",
+      "a": "Ya! gw menguasai Kotlin dengan proficiency 82% untuk pengembangan aplikasi mobile. Salah satu project saya, Catalog & Booking Tracking Jok System, menggunakan Kotlin. 📱"
+    },
+    {
+      "q": "bisa python",
+      "a": "Ya, gw bisa Python dengan proficiency 50%. gw menggunakannya untuk scripting dan pengembangan AI/machine learning. 🐍"
+    },
+    {
+      "q": "bisa tailwind",
+      "a": "Tentu! Tailwind CSS adalah skill frontend utama gw dengan proficiency 90%. Hampir semua project gw menggunakan Tailwind CSS untuk styling. 🎨"
+    },
+    {
+      "q": "bisa mysql",
+      "a": "Ya! MySQL adalah salah satu database yang gw kuasai dengan proficiency 78%. gw menggunakannya di berbagai project berbasis Laravel dan PHP. 🗄️"
+    },
+    {
+      "q": "bisa postgresql",
+      "a": "Ya! PostgreSQL gw kuasai dengan proficiency 78%. gw menggunakannya di project yang berbasis Next.js seperti Catalog & Booking Tracking Jok System. 🐘"
+    },
+    {
+      "q": "database apa yang dikuasai",
+      "a": "gw menguasai dua database:\n• MySQL (78%) - Banyak digunakan di project Laravel/PHP\n• PostgreSQL (78%) - Digunakan di project Next.js & Kotlin\n🗄️"
+    },
+    {
+      "q": "bahasa pemrograman apa saja",
+      "a": "Bahasa pemrograman yang gw kuasai:\n1. JavaScript (90%) - Bahasa utama\n2. PHP (82%) - Backend development\n3. Kotlin (82%) - Mobile development\n4. Python (50%) - Scripting & AI 💻"
+    },
+    {
+      "q": "framework apa saja",
+      "a": "Framework yang gw kuasai:\n• Tailwind CSS (90%) - CSS framework\n• React (88%) - Frontend library\n• Next.js (88%) - Full Stack React framework\n• Laravel (82%) - PHP full stack framework 🛠️"
+    },
+    {
+      "q": "tech stack",
+      "a": "Tech stack gw terdiri dari 10+ teknologi:\n\n**Languages:** JavaScript, PHP, Kotlin, Python\n**Frontend:** Tailwind CSS, React\n**Full Stack:** Next.js, Laravel\n**Database:** MySQL, PostgreSQL\n\nSemua ditampilkan di section Skills website ini! 🔧"
+    },
+    {
+      "q": "apa saja project kamu",
+      "a": "Berikut project-project saya:\n\n1. 🏢 **Digitizing Visitor** - Sistem digital kelola kunjungan tamu (Laravel, PHP, MySQL)\n2. 📊 **Marketing Tracking System** - Aplikasi pantau aktivitas tim sales (Laravel, PHP, MySQL)\n3. 🚗 **Catalog & Booking Tracking Jok** - Katalog & booking pemasangan jok (Next.js, Kotlin, PostgreSQL)\n4. 🔧 **Workshop Queue Booking** - Booking antrian servis bengkel (PHP, MySQL)\n5. 🌐 **Company Profile** - Website company profile premium (Next.js)\n6. 📦 **Inventory Management System** - Sistem kelola inventori barang (PHP)\n7. 📚 **Learning Management System** - E-learning STMI (Laravel, PHP)\n\nCek bagian Projects di website! 📂"
+    },
+    {
+      "q": "project apa saja yang pernah dikerjakan",
+      "a": "gw sudah mengerjakan 7+ project utama mencakup:\n• Digitizing Visitor System\n• Marketing Tracking System (MTS)\n• Catalog & Booking Tracking Jok System\n• Workshop Queue Booking System\n• Company Profile Website\n• Inventory Management System\n• Learning Management System (LMS)\n\nMasing-masing menggunakan tech stack yang berbeda! 🚀"
+    },
+    {
+      "q": "what are your projects",
+      "a": "Here are my main projects:\n1. Digitizing Visitor - Digital visitor management system\n2. Marketing Tracking System - Sales activity monitoring\n3. Catalog & Booking Tracking Jok - Vehicle seat catalog & booking\n4. Workshop Queue Booking - Auto workshop queue system\n5. Company Profile - Premium company website\n6. Inventory Management System - Stock management\n7. Learning Management System - E-learning platform 📂"
+    },
+    {
+      "q": "digitizing visitor",
+      "a": "**Digitizing Visitor** adalah sistem digital untuk mengelola proses kunjungan tamu ke perusahaan secara online dan terstruktur. Sistem ini menggantikan buku tamu manual dengan proses yang lebih cepat, aman, dan terdokumentasi.\n\n🔧 **Tech Stack:** PHP, Laravel, JavaScript, MySQL, Tailwind CSS\n⭐ **Featured Project** 🏢"
+    },
+    {
+      "q": "apa itu digitizing visitor",
+      "a": "Digitizing Visitor adalah aplikasi yang mendigitalkan proses pencatatan tamu perusahaan. Menggantikan buku tamu manual menjadi sistem online yang lebih cepat, aman, dan terdokumentasi dengan baik.\n\nDibangun dengan: PHP, Laravel, JavaScript, MySQL, dan Tailwind CSS. 🏢"
+    },
+    {
+      "q": "marketing tracking system",
+      "a": "**Marketing Tracking System (MTS)** adalah aplikasi untuk memantau dan mencatat aktivitas tim sales/marketing dalam menjalankan proyek dengan perusahaan klien. Membantu manajemen mengetahui perkembangan proyek dan kinerja tim sales secara terstruktur dan transparan.\n\n🔧 **Tech Stack:** PHP, Laravel, JavaScript, MySQL, Tailwind CSS 📊"
+    },
+    {
+      "q": "apa itu mts",
+      "a": "MTS (Marketing Tracking System) adalah aplikasi yang digunakan perusahaan untuk memantau aktivitas tim sales/marketing. Sistem ini membantu manajemen mengetahui perkembangan setiap proyek dan kinerja tim sales secara lebih terstruktur. Dibangun dengan Laravel & MySQL. 📊"
+    },
+    {
+      "q": "catalog booking jok",
+      "a": "**Catalog & Booking Tracking Jok System** adalah sistem untuk menampilkan katalog produk jok kendaraan sekaligus mengelola pemesanan dan penjadwalan pemasangan jok. Membantu perusahaan mengatur mulai dari pemilihan produk, pemesanan, hingga pemasangan jok secara efisien.\n\n🔧 **Tech Stack:** Next.js, Kotlin, PostgreSQL, Tailwind CSS 🚗"
+    },
+    {
+      "q": "workshop queue booking",
+      "a": "**Workshop Queue Booking System** adalah sistem untuk mengelola pemesanan antrian servis kendaraan di bengkel secara online. Customer bisa booking jadwal servis, memantau ketersediaan antrian, dan melakukan pembayaran tanpa harus datang langsung.\n\n🔧 **Tech Stack:** PHP, MySQL, Tailwind CSS 🔧"
+    },
+    {
+      "q": "company profile",
+      "a": "**Company Profile** adalah website company profile dengan animasi frame, dark theme, dan desain premium. Dibangun untuk memberikan kesan profesional dan modern bagi perusahaan.\n\n🔧 **Tech Stack:** Next.js, Tailwind CSS, JavaScript 🌐"
+    },
+    {
+      "q": "inventory management",
+      "a": "**Inventory Management System** adalah sistem untuk mengelola dan mencatat data persediaan barang dalam perusahaan secara digital. Membantu pencatatan barang masuk, pengelolaan stok, dan pembuatan nota pembelian agar inventori lebih rapi dan terkontrol.\n\n🔧 **Tech Stack:** PHP, Tailwind CSS 📦"
+    },
+    {
+      "q": "learning management system",
+      "a": "**Learning Management System (LMS)** adalah sistem e-learning yang dibuat oleh kelompok mahasiswa STMI untuk mendukung pembelajaran digital. Mahasiswa dan dosen dapat melakukan kegiatan belajar mengajar online dengan lebih mudah dan terorganisir.\n\n🔧 **Tech Stack:** PHP, Laravel, Tailwind CSS 📚"
+    },
+    {
+      "q": "apa itu lms",
+      "a": "LMS (Learning Management System) adalah sistem e-learning buatan mahasiswa Politeknik STMI Jakarta. Melalui platform ini, dosen dan mahasiswa bisa melakukan kegiatan belajar mengajar secara online. Dibangun dengan PHP, Laravel, dan Tailwind CSS. 📚"
+    },
+    {
+      "q": "project terbaik",
+      "a": "Project unggulan (featured) gw adalah **Digitizing Visitor** - sistem digital pengelolaan kunjungan tamu perusahaan. Dibangun dengan Laravel, JavaScript, MySQL, dan Tailwind CSS. Sistem ini menggantikan buku tamu manual menjadi proses yang lebih cepat dan aman! ⭐"
+    },
+    {
+      "q": "ada project mobile",
+      "a": "Ya! gw punya project mobile yaitu **Catalog & Booking Tracking Jok System** yang menggunakan Kotlin untuk aplikasi mobile dan Next.js + PostgreSQL untuk backend/web. 📱"
+    },
+    {
+      "q": "pengalaman kerja",
+      "a": "Berikut pengalaman saya:\n\n1. 💼 **Full Stack Developer** - PT KAYABA INDONESIA (2026 - Sekarang)\n   Mengembangkan aplikasi web skala besar dengan Laravel, React, dan Next.js\n\n2. 💼 **Full Stack Developer** - Dwitama Prima (2025 - 2026)\n   Merancang dan membangun antarmuka pengguna yang responsif dan modern\n\n3. 🎓 **HIMASI** - Politeknik STMI (2024 - 2026)\n   Anggota Himpunan Mahasiswa Sistem Informasi\n\n4. 🎓 **Mahasiswa** - Politeknik STMI (2023 - 2027)\n   Mahasiswa aktif Politeknik STMI Jakarta"
+    },
+    {
+      "q": "experience",
+      "a": "My work experience:\n\n1. Full Stack Developer at PT KAYABA INDONESIA (2026 - Present)\n2. Full Stack Developer at Dwitama Prima (2025 - 2026)\n3. Member of HIMASI at Politeknik STMI (2024 - 2026)\n4. Student at Politeknik STMI Jakarta (2023 - 2027) 💼"
+    },
+    {
+      "q": "pernah kerja dimana",
+      "a": "gw pernah bekerja di:\n1. **PT KAYABA INDONESIA** (2026 - Sekarang) sebagai Full Stack Developer\n2. **Dwitama Prima** (2025 - 2026) sebagai Full Stack Developer\n\ngw juga aktif di HIMASI Politeknik STMI dan sedang menempuh pendidikan di Politeknik STMI Jakarta. 🏢"
+    },
+    {
+      "q": "kerja di kayaba",
+      "a": "gw saat ini bekerja di **PT KAYABA INDONESIA** sebagai Full Stack Developer (2026 - Sekarang). Di sini gw mengembangkan aplikasi web skala besar menggunakan Laravel, React, dan Next.js, serta mengelola deployment dan CI/CD pipeline.\n\nTech: Laravel, Tailwind CSS, PHP 🏭"
+    },
+    {
+      "q": "kerja di dwitama",
+      "a": "gw bekerja di **Dwitama Prima** sebagai Full Stack Developer (2025 - 2026). Di sini gw merancang dan membangun antarmuka pengguna yang responsif dan modern, serta berkolaborasi dengan tim desain untuk UX terbaik.\n\nTech: Laravel, Tailwind CSS, PHP 🏢"
+    },
+    {
+      "q": "kuliah dimana",
+      "a": "gw kuliah di **Politeknik STMI Jakarta** (2023 - 2027). gw juga aktif sebagai anggota **HIMASI** (Himpunan Mahasiswa Sistem Informasi) dari tahun 2024 - 2026. 🎓"
+    },
+    {
+      "q": "politeknik stmi",
+      "a": "gw adalah mahasiswa Politeknik STMI Jakarta (2023 - 2027). Selama berkuliah, gw mempelajari berbagai teknologi termasuk Node.js, Next.js, React, PostgreSQL, PHP, dan Laravel. gw juga aktif di HIMASI (Himpunan Mahasiswa Sistem Informasi). 🏫"
+    },
+    {
+      "q": "himasi",
+      "a": "gw aktif di **HIMASI** (Himpunan Mahasiswa Sistem Informasi) Politeknik STMI dari tahun 2024 - 2026. Di sana gw terlibat dalam kegiatan podcast dan design. 🎙️"
+    },
+    {
+      "q": "pendidikan",
+      "a": "gw menempuh pendidikan di **Politeknik STMI Jakarta** (2023 - 2027). Selama kuliah, gw mempelajari berbagai bahasa pemrograman dan framework modern, serta aktif di organisasi HIMASI. 🎓"
+    },
+    {
+      "q": "education",
+      "a": "I'm currently studying at Politeknik STMI Jakarta (2023 - 2027). I'm also an active member of HIMASI (Information Systems Student Association). 🎓"
+    },
+    {
+      "q": "sekarang kerja dimana",
+      "a": "Saat ini gw bekerja di **PT KAYABA INDONESIA** sebagai Full Stack Developer sejak tahun 2026. gw mengembangkan aplikasi web skala besar menggunakan Laravel, Tailwind CSS, dan PHP. 🏭"
+    },
+    {
+      "q": "kapan mulai kerja",
+      "a": "gw mulai berkarir sebagai Full Stack Developer di **Dwitama Prima** pada tahun 2025. Lalu sejak 2026, gw bekerja di **PT KAYABA INDONESIA**. 📅"
+    },
+    {
+      "q": "bagaimana cara menghubungi",
+      "a": "Kamu bisa menghubungi gw melalui:\n\n🔗 **LinkedIn:** linkedin.com/in/\n🐙 **GitHub:** github.com/\n📸 **Instagram:** instagram.com/\n📧 **Email:** your@email.com\n\nSemua link tersedia di bagian footer website! 👇"
+    },
+    {
+      "q": "kontak",
+      "a": "Berikut kontak saya:\n• LinkedIn: linkedin.com/in/\n• GitHub: github.com/\n• Instagram: instagram.com/\n• Email: your@email.com\n\nCek footer website untuk link langsung! 📬"
+    },
+    {
+      "q": "contact",
+      "a": "You can reach me through:\n• LinkedIn\n• GitHub\n• Instagram\n• Email\n\nAll links are available in the website footer! 📬"
+    },
+    {
+      "q": "email",
+      "a": "Kamu bisa mengirim email ke: your@email.com 📧"
+    },
+    {
+      "q": "linkedin",
+      "a": "Kunjungi profil LinkedIn gw di: linkedin.com/in/ 🔗"
+    },
+    {
+      "q": "github",
+      "a": "Kunjungi GitHub gw di: github.com/ - Di sana kamu bisa melihat repository dan kode-kode project saya! 🐙"
+    },
+    {
+      "q": "instagram",
+      "a": "Follow Instagram gw di: instagram.com/ 📸"
+    },
+    {
+      "q": "social media",
+      "a": "Social media saya:\n• LinkedIn: linkedin.com/in/\n• GitHub: github.com/\n• Instagram: instagram.com/\n\nSemua link ada di footer website! 📱"
+    },
+    {
+      "q": "hire",
+      "a": "Terima kasih atas ketertarikannya! 🤝 Silakan hubungi gw via email (your@email.com) atau LinkedIn untuk diskusi kolaborasi dan kesempatan kerja."
+    },
+    {
+      "q": "available for work",
+      "a": "Ya, gw currently available for work! 🟢 Silakan hubungi gw melalui LinkedIn atau email untuk diskusi kesempatan kerja dan kolaborasi. 🤝"
+    },
+    {
+      "q": "mau hire kamu",
+      "a": "Terima kasih banyak! 🙏 gw  sangat terbuka untuk diskusi. Silakan kirim email ke your@email.com atau hubungi via LinkedIn. Let's collaborate! 🤝"
+    },
+    {
+      "q": "ada section apa saja di website ini",
+      "a": "Website ini memiliki beberapa section utama:\n\n🏠 **Home** - Halaman utama dengan animasi frame\n👤 **About** - Tentang gw (Raisa Akmal Faridi)\n💻 **Skills** - Tech stack & keahlian (10+ teknologi)\n💼 **Experience** - Pengalaman kerja & pendidikan\n📂 **Projects** - Portfolio project (7+ project)\n💬 **Chat** - Chatbot interaktif\n\nKlik menu navigasi di atas untuk berpindah section! 📋"
+    },
+    {
+      "q": "fitur website ini apa saja",
+      "a": "Fitur utama website ini:\n\n🎬 Animasi frame scroll di section Hero (104 frame)\n👤 Profil lengkap About Me\n💻 Carousel skills interaktif\n📅 Timeline pengalaman kerja\n📂 Grid portfolio project\n💬 Chatbot interaktif\n🎨 Dark theme premium\n📱 Responsive design\n\nSemua dirancang dengan desain modern! ✨"
+    },
+    {
+      "q": "cara navigasi website",
+      "a": "Gunakan navbar di bagian atas halaman untuk navigasi:\n• Home - Kembali ke halaman utama\n• About - Lihat profil saya\n• Skills - Lihat keahlian teknis\n• Experience - Lihat pengalaman kerja\n• Projects - Lihat portfolio project\n• Chat - Gunakan chatbot ini\n\nKamu juga bisa scroll ke bawah untuk melihat semua section! 📋"
+    },
+    {
+      "q": "bisa bantu apa",
+      "a": "gw bisa menjawab pertanyaan tentang:\n• 👤 Profil & tentang Raisa Akmal Faridi\n• 💻 Skills & tech stack\n• 💼 Pengalaman kerja\n• 📂 Project-project\n• 📬 Informasi kontak\n• 🌐 Website ini\n\nSilakan tanyakan apa saja! 😊"
+    },
+    {
+      "q": "apa yang bisa kamu lakukan",
+      "a": "gw adalah chatbot portfolio yang bisa memberikan informasi tentang Raisa Akmal Faridi, termasuk skills, pengalaman kerja, project, cara menghubungi, dan informasi website ini. Tanyakan apa saja! 🤖"
+    },
+    {
+      "q": "terima kasih",
+      "a": "Sama-sama! 😊 Senang bisa membantu! Jika ada pertanyaan lain, jangan ragu untuk bertanya ya! 🙏"
+    },
+    {
+      "q": "thanks",
+      "a": "You're welcome! 😊 Feel free to ask anything else!"
+    },
+    {
+      "q": "makasih",
+      "a": "Sama-sama! Senang bisa membantu! Kalau ada pertanyaan lagi, tanyakan saja ya! 🤗"
+    },
+    {
+      "q": "bye",
+      "a": "Bye bye! 👋 Terima kasih sudah berkunjung ke portfolio saya. Sampai jumpa lagi! 😊"
+    },
+    {
+      "q": "sampai jumpa",
+      "a": "Sampai jumpa! 👋 Terima kasih sudah mampir. Jangan ragu untuk kembali lagi! 😊"
+    },
+    {
+      "q": "dadah",
+      "a": "Dadah! 👋 Semoga harimu menyenangkan! Sampai ketemu lagi! 😄"
+    },
+    {
+      "q": "kamu mahasiswa mana",
+      "a": "gw mahasiswa **Politeknik STMI Jakarta**, jurusan Sistem Informasi (2023 - 2027). gw juga aktif di organisasi HIMASI. 🎓"
+    },
+    {
+      "q": "umur berapa",
+      "a": "gw seorang mahasiswa Politeknik STMI Jakarta angkatan 2023. Untuk info lebih lanjut, silakan hubungi gw langsung melalui kontak yang tersedia di footer. 😊"
+    },
+    {
+      "q": "bisa buat website",
+      "a": "Tentu bisa! gw menguasai Next.js, React, Laravel, Tailwind CSS, dan berbagai teknologi web modern untuk membuat website yang profesional dan responsif. Hubungi gw untuk diskusi project! 🌐"
+    },
+    {
+      "q": "bisa buat aplikasi mobile",
+      "a": "Ya! gw menguasai Kotlin untuk pengembangan aplikasi mobile. Salah satu project saya, Catalog & Booking Tracking Jok System, dibuat dengan Kotlin. 📱"
+    },
+    {
+      "q": "berapa tarif",
+      "a": "Untuk diskusi tarif dan kolaborasi, silakan hubungi gw langsung melalui email (your@email.com) atau LinkedIn. gw terbuka untuk berbagai jenis project! 💼"
+    },
+    {
+      "q": "freelance",
+      "a": "gw terbuka untuk kesempatan freelance! Silakan hubungi gw melalui email atau LinkedIn untuk mendiskusikan project kamu. 🤝"
+    },
+    {
+      "q": "open to work",
+      "a": "Ya! gw currently available for work dan open to new opportunities! 🟢 Hubungi gw via LinkedIn atau email untuk diskusi lebih lanjut. 💼"
+    },
+    {
+      "q": "portfolio",
+      "a": "Kamu sedang melihat portfolio saya! 😄 Website ini menampilkan:\n• Profil lengkap saya\n• 10+ tech skills\n• 4 pengalaman kerja/pendidikan\n• 7+ project portfolio\n• Chatbot interaktif\n\nScroll untuk menjelajahi semua section! 🚀"
+    },
+    {
+      "q": "apa kelebihan kamu",
+      "a": "Beberapa kelebihan saya:\n\n✅ Full Stack — menguasai frontend & backend\n✅ 10+ tech stack yang dikuasai\n✅ 3+ tahun pengalaman\n✅ 20+ project selesai\n✅ Bisa web & mobile development\n✅ Selalu belajar teknologi baru\n✅ Fokus pada kualitas kode & UX 💪"
+    },
+    {
+      "q": "apa spesialisasi kamu",
+      "a": "Spesialisasi gw adalah **Full Stack Web Development** dengan fokus pada:\n• Frontend: React, Next.js, Tailwind CSS\n• Backend: Laravel, PHP, JavaScript\n• Database: MySQL, PostgreSQL\n• Mobile: Kotlin\n\ngw juga bisa membangun aplikasi dari nol hingga deployment! 🎯"
+    }
+  ]
+}
