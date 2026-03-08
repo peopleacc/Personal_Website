@@ -48,7 +48,7 @@ export default function Navbar() {
                     {/* Logo */}
                     <a href="#home" className="relative group">
                         <span className="text-lg font-black gradient-text tracking-tight">
-                            &lt;Dev /&gt;
+                            &lt;Raisa AF&gt;
                         </span>
                     </a>
 
