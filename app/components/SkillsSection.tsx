@@ -4,12 +4,15 @@ import { useEffect, useRef, useState } from "react";
 
 const SKILLS = [
   { name: "JavaScript", level: 90, color: "#f7df1e", icon: "/image/JS.png", category: "Language" },
-  { name: "React", level: 88, color: "#61dafb", icon: "/image/react.png", category: "Frontend" },
-  { name: "Next.js", level: 88, color: "#ffffff", icon: "/image/next.png", category: "Frontend" },
-  { name: "PHP / Laravel", level: 82, color: "#ff2d20", icon: "/image/laravel.png", category: "Backend" },
+  { name: "PHP", level: 82, color: "#ff2d20", icon: "/image/php.png", category: "Language" },
+  { name: "Kotlin", level: 82, color: "#ff2d20", icon: "/image/kotlin.jpg", category: "Language" },
   { name: "Python", level: 50, color: "#3776ab", icon: "/image/python.png", category: "Language" },
-  { name: "MySQL", level: 78, color: "#4479a1", icon: "/image/mysql.png", category: "Infrastructure" },
-  { name: "PostgreSQL", level: 78, color: "#336791", icon: "/image/postgre.png", category: "Infrastructure" },
+  { name: "Tailwind Css", level: 90, color: "#f7df1e", icon: "/image/tailwind.png", category: "Frontend" },
+  { name: "React", level: 88, color: "#61dafb", icon: "/image/react_js.png", category: "Frontend" },
+  { name: "Next.js", level: 88, color: "#ffffff", icon: "/image/next.png", category: "Frontend/Backend" },
+  { name: "Laravel", level: 82, color: "#ff2d20", icon: "/image/laravel.png", category: "Backend/Frontend" },
+  { name: "MySQL", level: 78, color: "#4479a1", icon: "/image/mysql.png", category: "Database" },
+  { name: "PostgreSQL", level: 78, color: "#336791", icon: "/image/postgre.png", category: "Database" },
 ];
 
 export default function SkillsSection() {
