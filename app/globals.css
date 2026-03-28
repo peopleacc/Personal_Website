@@ -13,6 +13,9 @@
   --text-secondary: #8b8ba3;
   --glass-bg: rgba(255, 255, 255, 0.04);
   --glass-border: rgba(255, 255, 255, 0.08);
+  --section-bg: #07040d;
+  --section-bg-mid: #0c0816;
+  --section-bg-alt: #110b1e;
 }
 
 @theme inline {
@@ -26,13 +29,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-sans);
-  overflow-x: clip;
 }
 
 /* Custom Scrollbar */

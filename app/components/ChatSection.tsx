@@ -30,7 +30,7 @@ export default function ChatSection() {
 
     useEffect(() => {
         const observer = new IntersectionObserver(
-            ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
+            ([entry]) => setIsVisible(entry.isIntersecting),
             { threshold: 0.1 }
         );
         if (sectionRef.current) observer.observe(sectionRef.current);
@@ -94,11 +94,15 @@ export default function ChatSection() {
 
     return (
         <section id="chat" ref={sectionRef} className="relative py-32 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-primary)] via-[var(--bg-secondary)] to-[var(--bg-primary)]" />
-            <div className="mesh-gradient w-[400px] h-[400px] bg-[var(--accent-cyan)] top-20 right-0" />
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--accent-cyan)] to-transparent opacity-15" />
+            {/* Deep purple gradient background */}
+            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, var(--section-bg-alt) 0%, var(--section-bg-mid) 50%, var(--section-bg) 100%)" }} />
+            {/* Ambient glow orbs */}
+            <div className="absolute top-20 -right-32 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(34,211,238,0.05) 0%, transparent 70%)", filter: "blur(60px)" }} />
+            <div className="absolute bottom-20 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(168,85,247,0.05) 0%, transparent 70%)", filter: "blur(60px)" }} />
+            {/* Warm section divider */}
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(34,211,238,0.2)] to-transparent" />
 
-            <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-8">
+            <div className={`relative z-10 max-w-3xl mx-auto px-6 lg:px-8 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
                 {/* Section heading */}
                 <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
                     <div className="section-label glass border-[rgba(34,211,238,0.15)] text-[var(--accent-cyan)]">
@@ -108,9 +112,9 @@ export default function ChatSection() {
                         Ask Me
                     </div>
                     <h2 className="section-title mb-4">
-                        <span className="gradient-text-alt">Chat Boca (Bot Eca)</span>
+                        <span className="text-white">Chat Boca (Bot Eca)</span>
                     </h2>
-                    <p className="text-[var(--text-secondary)] max-w-md mx-auto text-sm leading-relaxed">
+                    <p className="text-[rgba(255,255,255,0.6)] max-w-md mx-auto text-sm leading-relaxed">
                         Punya pertanyaan? Tanyakan langsung lewat Boca interaktif ini!
                     </p>
                 </div>
@@ -120,7 +124,7 @@ export default function ChatSection() {
                     {/* Outer glow */}
                     <div className="absolute -inset-0.5 rounded-3xl bg-gradient-to-br from-[rgba(34,211,238,0.15)] via-transparent to-[rgba(168,85,247,0.1)] blur-sm" />
 
-                    <div className="relative bg-[rgba(13,10,23,0.9)] backdrop-blur-xl border border-[rgba(255,255,255,0.06)] rounded-3xl overflow-hidden">
+                    <div className="relative bg-[rgba(0,0,0,0.9)] backdrop-blur-xl border border-[rgba(255,255,255,0.06)] rounded-3xl overflow-hidden">
 
                         {/* Chat Header */}
                         <div className="px-6 py-4 border-b border-[rgba(255,255,255,0.06)] flex items-center gap-3 bg-[rgba(255,255,255,0.02)]">
@@ -130,7 +134,7 @@ export default function ChatSection() {
                                 </svg>
                             </div>
                             <div>
-                                <p className="font-bold text-sm text-[var(--text-primary)]">Boca</p>
+                                <p className="font-bold text-sm text-white">Boca</p>
                                 <p className="text-[10px] text-emerald-400 flex items-center gap-1.5">
                                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                                     Online — siap membantu
@@ -148,11 +152,11 @@ export default function ChatSection() {
                                     <div
                                         className={`max-w-[80%] rounded-2xl px-5 py-3 ${msg.sender === "user"
                                             ? "bg-gradient-to-r from-[var(--accent-orange)] to-[var(--accent-pink)] text-white rounded-br-md shadow-[0_4px_20px_rgba(245,158,11,0.2)]"
-                                            : "bg-[rgba(255,255,255,0.05)] text-[var(--text-primary)] rounded-bl-md border border-[rgba(255,255,255,0.04)]"
+                                            : "bg-[rgba(255,255,255,0.05)] text-white rounded-bl-md border border-[rgba(255,255,255,0.04)]"
                                             }`}
                                     >
                                         <p className="text-sm leading-relaxed">{msg.text}</p>
-                                        <p className={`text-[9px] mt-1.5 ${msg.sender === "user" ? "text-white/50" : "text-[var(--text-secondary)]"}`}>
+                                        <p className={`text-[9px] mt-1.5 ${msg.sender === "user" ? "text-white/50" : "text-[rgba(255,255,255,0.5)]"}`}>
                                             {msg.timestamp}
                                         </p>
                                     </div>
@@ -192,7 +196,7 @@ export default function ChatSection() {
                                         }
                                     }}
                                     placeholder="Ketik pertanyaan..."
-                                    className="flex-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.06)] rounded-2xl px-5 py-3 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-secondary)] focus:outline-none focus:border-[var(--accent-cyan)] focus:shadow-[0_0_20px_rgba(34,211,238,0.1)] transition-all duration-300"
+                                    className="flex-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.06)] rounded-2xl px-5 py-3 text-sm text-white placeholder:text-[rgba(255,255,255,0.4)] focus:outline-none focus:border-[rgba(255,255,255,0.2)] focus:shadow-[0_0_20px_rgba(255,255,255,0.05)] transition-all duration-300"
                                 />
                                 <button
                                     onClick={handleSend}

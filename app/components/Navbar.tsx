@@ -34,26 +34,30 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${isScrolled
-                    ? "py-2"
-                    : "py-3"
-                }`}
+            className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+            style={{
+                background: isScrolled
+                    ? "rgba(7, 4, 13, 0.6)"
+                    : "transparent",
+                backdropFilter: isScrolled ? "blur(20px)" : "none",
+                WebkitBackdropFilter: isScrolled ? "blur(20px)" : "none",
+                borderBottom: isScrolled
+                    ? "1px solid rgba(255,255,255,0.06)"
+                    : "1px solid transparent",
+            }}
         >
-            <div className={`max-w-7xl mx-auto px-4 lg:px-8 transition-all duration-700 ${isScrolled ? "" : ""
-                }`}>
-                <div className={`flex items-center justify-between h-14 px-5 rounded-2xl transition-all duration-700 ${isScrolled
-                        ? "bg-[rgba(7,4,13,0.85)] backdrop-blur-xl border border-[rgba(255,255,255,0.06)] shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-                        : "bg-transparent"
-                    }`}>
-                    {/* Logo */}
-                    <a href="#home" className="relative group">
+            <div className="w-full px-6 lg:px-12">
+                <div className="flex items-center justify-between h-16">
+
+                    {/* LEFT — Logo */}
+                    <a href="#home" className="relative group flex-shrink-0">
                         <span className="text-lg font-black gradient-text tracking-tight">
                             &lt;Raisa AF&gt;
                         </span>
                     </a>
 
-                    {/* Desktop Nav */}
-                    <div className="hidden md:flex items-center">
+                    {/* CENTER — Nav Links (desktop) */}
+                    <div className="hidden md:flex items-center absolute left-1/2 -translate-x-1/2">
                         <div className="flex items-center gap-1 p-1 rounded-full">
                             {NAV_ITEMS.map((item) => {
                                 const isActive = activeSection === item.href.replace("#", "");
@@ -73,22 +77,47 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    {/* Mobile Toggle */}
-                    <button
-                        className="md:hidden flex flex-col gap-1.5 p-2.5 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.06)]"
-                        onClick={() => setIsMobileOpen(!isMobileOpen)}
-                        aria-label="Toggle menu"
-                    >
-                        <span className={`block w-5 h-0.5 bg-[var(--text-primary)] transition-all duration-300 origin-center ${isMobileOpen ? "rotate-45 translate-y-[4px]" : ""}`} />
-                        <span className={`block w-5 h-0.5 bg-[var(--text-primary)] transition-all duration-300 ${isMobileOpen ? "opacity-0 scale-0" : ""}`} />
-                        <span className={`block w-5 h-0.5 bg-[var(--text-primary)] transition-all duration-300 origin-center ${isMobileOpen ? "-rotate-45 -translate-y-[4px]" : ""}`} />
-                    </button>
+                    {/* RIGHT — Email Button (desktop) + Mobile Toggle */}
+                    <div className="flex items-center gap-3 flex-shrink-0">
+                        {/* Email Button — desktop */}
+                        <a
+                            href="mailto:raisakmalfaridi@gmail.com"
+                            className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 border border-[rgba(255,255,255,0.1)] text-[var(--text-primary)] hover:border-[var(--accent-orange)] hover:shadow-[0_0_20px_rgba(245,158,11,0.15)] hover:text-[var(--accent-orange)]"
+                            style={{ background: "rgba(255,255,255,0.04)" }}
+                        >
+                            <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                            </svg>
+                            Email Me
+                        </a>
+
+                        {/* Mobile Toggle */}
+                        <button
+                            className="md:hidden flex flex-col gap-1.5 p-2.5 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.06)]"
+                            onClick={() => setIsMobileOpen(!isMobileOpen)}
+                            aria-label="Toggle menu"
+                        >
+                            <span className={`block w-5 h-0.5 bg-[var(--text-primary)] transition-all duration-300 origin-center ${isMobileOpen ? "rotate-45 translate-y-[4px]" : ""}`} />
+                            <span className={`block w-5 h-0.5 bg-[var(--text-primary)] transition-all duration-300 ${isMobileOpen ? "opacity-0 scale-0" : ""}`} />
+                            <span className={`block w-5 h-0.5 bg-[var(--text-primary)] transition-all duration-300 origin-center ${isMobileOpen ? "-rotate-45 -translate-y-[4px]" : ""}`} />
+                        </button>
+                    </div>
                 </div>
             </div>
 
             {/* Mobile Menu */}
-            <div className={`md:hidden overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${isMobileOpen ? "max-h-[400px]" : "max-h-0"}`}>
-                <div className="mx-4 mt-2 bg-[rgba(7,4,13,0.95)] backdrop-blur-xl rounded-2xl border border-[rgba(255,255,255,0.06)] px-4 py-3 space-y-1 shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+            <div className={`md:hidden overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${isMobileOpen ? "max-h-[500px]" : "max-h-0"}`}>
+                <div className="px-6 py-3 space-y-1 border-t border-[rgba(255,255,255,0.06)]">
                     {NAV_ITEMS.map((item) => {
                         const isActive = activeSection === item.href.replace("#", "");
                         return (
@@ -105,6 +134,27 @@ export default function Navbar() {
                             </a>
                         );
                     })}
+                    {/* Email — mobile */}
+                    <a
+                        href="mailto:raisakmalfaridi@gmail.com"
+                        onClick={() => setIsMobileOpen(false)}
+                        className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium text-[var(--accent-orange)] hover:bg-[rgba(255,255,255,0.04)] transition-all duration-300"
+                    >
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        >
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                        Email Me
+                    </a>
                 </div>
             </div>
         </nav>
