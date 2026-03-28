@@ -94,6 +94,99 @@ function useTypewriter({
     return { line1, line2, cursorOnLine, buttonsVisible };
 }
 
+import React from "react";
+
+const Cursor = () => (
+    <span
+        className="inline-block w-[3px] ml-[2px] bg-[var(--accent-orange)]"
+        style={{
+            height: "0.82em",
+            verticalAlign: "middle",
+            animation: "blink-cursor 0.75s step-end infinite",
+        }}
+    />
+);
+
+const HeroContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>((props, ref) => {
+    const { line1, line2, cursorOnLine, buttonsVisible } = useTypewriter();
+
+    return (
+        <div
+            ref={ref}
+            className="absolute inset-0 z-10 flex flex-row items-center justify-start px-6 lg:pl-44 gap-88"
+            style={{ opacity: 1, transform: "scale(1)", willChange: "opacity, transform" }}
+        >
+            <div className="relative z-10 flex flex-col items-center lg:items-start justify-center text-center lg:text-left max-w-xl">
+
+                <div className="animate-fade-in-up" style={{ animationDelay: "0.2s", animationFillMode: "both" }}>
+                    <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass mb-6 border border-[rgba(245,158,11,0.2)]" />
+                </div>
+
+                {/* ── Two-line name ── */}
+                <div className="animate-fade-in-up" style={{ animationDelay: "0.5s", animationFillMode: "both" }}>
+                    <h1
+                        className="font-black tracking-tight mb-6"
+                        style={{ fontSize: "clamp(3rem, 8vw, 6rem)", lineHeight: 1.05 }}
+                    >
+                        {/* Line 1 — "Raisa" */}
+                        <div
+                            className="block text-[var(--text-primary)] drop-shadow-[0_0_30px_rgba(245,158,11,0.15)]"
+                            style={{ minHeight: "1.05em" }}
+                        >
+                            {line1 || <span className="invisible">R</span>}
+                            {cursorOnLine === 1 && <Cursor />}
+                        </div>
+
+                        {/* Line 2 — "Akmal Faridi" */}
+                        <div
+                            className="block text-[var(--text-primary)] drop-shadow-[0_0_30px_rgba(245,158,11,0.15)]"
+                            style={{ minHeight: "1.05em" }}
+                        >
+                            {line2 || <span className="invisible">A</span>}
+                            {cursorOnLine === 2 && <Cursor />}
+                        </div>
+                    </h1>
+                </div>
+
+                {/* ── Buttons — synced with name visibility ── */}
+                <div
+                    className="flex mt-8 flex-col sm:flex-row gap-4"
+                    style={{
+                        opacity: buttonsVisible ? 1 : 0,
+                        transform: buttonsVisible ? "translateY(0px)" : "translateY(14px)",
+                        transition: "opacity 0.6s ease, transform 0.6s ease",
+                        pointerEvents: buttonsVisible ? "auto" : "none",
+                    }}
+                >
+                    <a
+                        href="#skills"
+                        className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[var(--accent-orange)] to-[var(--accent-pink)] text-white font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(245,158,11,0.3)]"
+                    >
+                        Explore My Skills
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M12 5v14M19 12l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <a
+                        href="#chat"
+                        className="inline-flex items-center gap-3 px-8 py-4 rounded-full glass text-[var(--text-primary)] font-semibold text-sm transition-all duration-300 hover:scale-105 hover:bg-[rgba(255,255,255,0.1)] border border-[var(--glass-border)]"
+                    >
+                        Chat With Me
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+
+            <div className="hidden lg:flex justify-center items-center" />
+        </div>
+    );
+});
+
+HeroContent.displayName = "HeroContent";
+
 export default function HeroAboutSection() {
     const containerRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -109,8 +202,6 @@ export default function HeroAboutSection() {
     const scrollRef = useRef(0);
     const lastDrawRef = useRef({ base: -1, blend: -1 });
 
-    const { line1, line2, cursorOnLine, buttonsVisible } = useTypewriter();
-
     const loadFrame = (frameNum: number) => {
         if (frameNum < 1 || frameNum > TOTAL_FRAMES) return;
         if (loadedRef.current[frameNum]) return;
@@ -120,8 +211,30 @@ export default function HeroAboutSection() {
         img.onload = () => { imagesRef.current[frameNum] = img; };
     };
 
+    // Pick up preloaded frames from the Loader (if available), otherwise fallback
     useEffect(() => {
-        for (let i = 1; i <= Math.min(20, TOTAL_FRAMES); i++) loadFrame(i);
+        const preloaded = (window as unknown as Record<string, unknown>).__preloadedFrames as (HTMLImageElement | null)[] | undefined;
+        if (preloaded && preloaded.length > 0) {
+            for (let i = 1; i <= TOTAL_FRAMES; i++) {
+                if (preloaded[i]) {
+                    imagesRef.current[i] = preloaded[i];
+                    loadedRef.current[i] = true;
+                }
+            }
+            // Immediately draw frame 1 so it's visible behind the loader curtain
+            const canvas = canvasRef.current;
+            const ctx = canvas?.getContext("2d");
+            const firstImg = imagesRef.current[1];
+            if (ctx && canvas && firstImg) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                ctx.drawImage(firstImg, 0, 0, canvas.width, canvas.height);
+                lastDrawRef.current = { base: 1, blend: 0 };
+            }
+        } else {
+            // Fallback: preload first 20 on-demand
+            for (let i = 1; i <= Math.min(20, TOTAL_FRAMES); i++) loadFrame(i);
+        }
     }, []);
 
     useEffect(() => {
@@ -131,6 +244,12 @@ export default function HeroAboutSection() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             lastDrawRef.current = { base: -1, blend: -1 };
+            // Redraw current frame after resize
+            const firstImg = imagesRef.current[1];
+            const ctx = canvas.getContext("2d");
+            if (ctx && firstImg) {
+                ctx.drawImage(firstImg, 0, 0, canvas.width, canvas.height);
+            }
         };
         resize();
         window.addEventListener("resize", resize);
@@ -147,6 +266,7 @@ export default function HeroAboutSection() {
 
         const tick = () => {
             const p = scrollRef.current;
+
             const exactFrame = p * (TOTAL_FRAMES - 1) + 1;
             const baseFrame = Math.max(1, Math.min(TOTAL_FRAMES, Math.floor(exactFrame)));
             const nextFrame = Math.max(1, Math.min(TOTAL_FRAMES, baseFrame + 1));
@@ -213,17 +333,6 @@ export default function HeroAboutSection() {
         };
     }, []);
 
-    const Cursor = () => (
-        <span
-            className="inline-block w-[3px] ml-[2px] bg-[var(--accent-orange)]"
-            style={{
-                height: "0.82em",
-                verticalAlign: "middle",
-                animation: "blink-cursor 0.75s step-end infinite",
-            }}
-        />
-    );
-
     return (
         <section
             id="home"
@@ -277,77 +386,7 @@ export default function HeroAboutSection() {
                 </div>
 
                 {/* ===== HERO CONTENT ===== */}
-                <div
-                    ref={heroRef}
-                    className="absolute inset-0 z-10 flex flex-row items-center justify-start px-6 lg:pl-44 gap-88"
-                    style={{ opacity: 1, transform: "scale(1)" }}
-                >
-                    <div className="relative z-10 flex flex-col items-center lg:items-start justify-center text-center lg:text-left max-w-xl">
-
-                        <div className="animate-fade-in-up" style={{ animationDelay: "0.2s", animationFillMode: "both" }}>
-                            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass mb-6 border border-[rgba(245,158,11,0.2)]" />
-                        </div>
-
-                        {/* ── Two-line name ── */}
-                        <div className="animate-fade-in-up" style={{ animationDelay: "0.5s", animationFillMode: "both" }}>
-                            <h1
-                                className="font-black tracking-tight mb-6"
-                                style={{ fontSize: "clamp(3rem, 8vw, 6rem)", lineHeight: 1.05 }}
-                            >
-                                {/* Line 1 — "Raisa" */}
-                                <div
-                                    className="block text-[var(--text-primary)] drop-shadow-[0_0_30px_rgba(245,158,11,0.15)]"
-                                    style={{ minHeight: "1.05em" }}
-                                >
-                                    {line1 || <span className="invisible">R</span>}
-                                    {cursorOnLine === 1 && <Cursor />}
-                                </div>
-
-                                {/* Line 2 — "Akmal Faridi" */}
-                                <div
-                                    className="block text-[var(--text-primary)] drop-shadow-[0_0_30px_rgba(245,158,11,0.15)]"
-                                    style={{ minHeight: "1.05em" }}
-                                >
-                                    {line2 || <span className="invisible">A</span>}
-                                    {cursorOnLine === 2 && <Cursor />}
-                                </div>
-                            </h1>
-                        </div>
-
-                        {/* ── Buttons — synced with name visibility ── */}
-                        <div
-                            className="flex mt-8 flex-col sm:flex-row gap-4"
-                            style={{
-                                opacity: buttonsVisible ? 1 : 0,
-                                transform: buttonsVisible ? "translateY(0px)" : "translateY(14px)",
-                                transition: "opacity 0.6s ease, transform 0.6s ease",
-                                pointerEvents: buttonsVisible ? "auto" : "none",
-                            }}
-                        >
-                            <a
-                                href="#skills"
-                                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[var(--accent-orange)] to-[var(--accent-pink)] text-white font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(245,158,11,0.3)]"
-                            >
-                                Explore My Skills
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M12 5v14M19 12l-7 7-7-7" />
-                                </svg>
-                            </a>
-                            <a
-                                href="#chat"
-                                className="inline-flex items-center gap-3 px-8 py-4 rounded-full glass text-[var(--text-primary)] font-semibold text-sm transition-all duration-300 hover:scale-105 hover:bg-[rgba(255,255,255,0.1)] border border-[var(--glass-border)]"
-                            >
-                                Chat With Me
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                                </svg>
-                            </a>
-                        </div>
-
-                    </div>
-
-                    <div className="hidden lg:flex justify-center items-center" />
-                </div>
+                <HeroContent ref={heroRef} />
 
                 {/* Scroll indicator */}
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2">

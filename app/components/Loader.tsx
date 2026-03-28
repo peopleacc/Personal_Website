@@ -1,45 +1,52 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+
+const TOTAL_FRAMES = 104;
 
 export default function Loader({ onFinish }: { onFinish: () => void }) {
     const [phase, setPhase] = useState<"loading" | "line" | "opening" | "done">("loading");
     const [progress, setProgress] = useState(0);
+    const imagesRef = useRef<HTMLImageElement[]>([]);
 
-    // Loading progress animation
+    // Preload ALL frame images and track real progress
     useEffect(() => {
-        let frame: number;
-        let start: number | null = null;
-        const duration = 2500; // 2.5s loading
+        let loaded = 0;
+        const total = TOTAL_FRAMES;
 
-        const animate = (timestamp: number) => {
-            if (!start) start = timestamp;
-            const elapsed = timestamp - start;
-            const p = Math.min(elapsed / duration, 1);
-            // ease-out cubic
-            const eased = 1 - Math.pow(1 - p, 3);
-            setProgress(eased * 100);
+        const promises = Array.from({ length: total }, (_, i) => {
+            const frameNum = i + 1;
+            return new Promise<void>((resolve) => {
+                const img = new window.Image();
+                img.src = `/frame/${String(frameNum).padStart(5, "0")}.png`;
+                img.onload = () => {
+                    imagesRef.current[frameNum] = img;
+                    loaded++;
+                    setProgress((loaded / total) * 100);
+                    resolve();
+                };
+                img.onerror = () => {
+                    loaded++;
+                    setProgress((loaded / total) * 100);
+                    resolve();
+                };
+            });
+        });
 
-            if (p < 1) {
-                frame = requestAnimationFrame(animate);
-            } else {
-                // Loading done → show line
-                setTimeout(() => setPhase("line"), 300);
-            }
-        };
-
-        frame = requestAnimationFrame(animate);
-        return () => cancelAnimationFrame(frame);
+        Promise.all(promises).then(() => {
+            // Store preloaded images globally so HeroAboutSection can use them
+            (window as unknown as Record<string, unknown>).__preloadedFrames = imagesRef.current;
+            // Small delay so user sees 100%
+            setTimeout(() => setPhase("line"), 400);
+        });
     }, []);
 
     // Phase transitions
     useEffect(() => {
         if (phase === "line") {
-            // Line appears → then opens
             setTimeout(() => setPhase("opening"), 800);
         }
         if (phase === "opening") {
-            // Curtain opens → done
             setTimeout(() => setPhase("done"), 2000);
         }
         if (phase === "done") {
@@ -143,11 +150,11 @@ export default function Loader({ onFinish }: { onFinish: () => void }) {
                     Portfolio
                 </p>
 
-                {/* Progress bar */}
+                {/* Progress bar — now shows REAL loading progress */}
                 <div className="w-48 md:w-64 flex flex-col items-center gap-3">
                     <div className="w-full h-[2px] rounded-full bg-[rgba(255,255,255,0.06)] overflow-hidden">
                         <div
-                            className="h-full rounded-full transition-none"
+                            className="h-full rounded-full transition-all duration-150 ease-out"
                             style={{
                                 width: `${progress}%`,
                                 background: "linear-gradient(90deg, #f59e0b, #ec4899, #a855f7)",
