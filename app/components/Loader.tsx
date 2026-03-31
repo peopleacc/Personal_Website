@@ -18,7 +18,7 @@ export default function Loader({ onFinish }: { onFinish: () => void }) {
             const frameNum = i + 1;
             return new Promise<void>((resolve) => {
                 const img = new window.Image();
-                img.src = `/frame/${String(frameNum).padStart(5, "0")}.png`;
+                img.src = `/frame/${String(frameNum).padStart(5, "0")}.webp`;
                 img.onload = () => {
                     imagesRef.current[frameNum] = img;
                     loaded++;
