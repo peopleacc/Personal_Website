@@ -193,7 +193,7 @@ export default function HeroAboutSection() {
     const heroRef = useRef<HTMLDivElement>(null);
     const aboutRef = useRef<HTMLDivElement>(null);
     const overlayRef = useRef<HTMLDivElement>(null);
-    const bottomFadeRef = useRef<HTMLDivElement>(null);
+
 
     const imagesRef = useRef<(HTMLImageElement | null)[]>(Array(TOTAL_FRAMES + 2).fill(null));
     const loadedRef = useRef<boolean[]>(Array(TOTAL_FRAMES + 2).fill(false));
@@ -302,7 +302,7 @@ export default function HeroAboutSection() {
             const aboutOpacity = p < 0.30 ? 0 : p > 0.50 ? 1 : (p - 0.30) / 0.2;
             const aboutOverlayOpacity = p < 0.25 ? 0 : p > 0.45 ? 0.7 : ((p - 0.25) / 0.2) * 0.7;
             const aboutTranslateY = p < 0.30 ? 60 : Math.max(0, 60 - ((p - 0.30) / 0.2) * 60);
-            const bottomFadeOpacity = p > 0.85 ? (p - 0.85) / 0.15 : 0;
+
 
             if (heroRef.current) {
                 heroRef.current.style.opacity = String(heroOpacity);
@@ -317,9 +317,7 @@ export default function HeroAboutSection() {
             if (overlayRef.current) {
                 overlayRef.current.style.opacity = String(aboutOverlayOpacity);
             }
-            if (bottomFadeRef.current) {
-                bottomFadeRef.current.style.opacity = String(bottomFadeOpacity);
-            }
+
 
             rafRef.current = requestAnimationFrame(tick);
         };
@@ -420,12 +418,7 @@ export default function HeroAboutSection() {
                     </div>
                 </div>
 
-                {/* Bottom fade */}
-                <div
-                    ref={bottomFadeRef}
-                    className="absolute bottom-0 left-0 right-0 h-32 z-20 pointer-events-none"
-                    style={{ opacity: 0, background: "linear-gradient(to bottom, transparent, var(--bg-primary))" }}
-                />
+                {/* Bottom fade — removed for seamless frame transition continuity */}
             </div>
 
             <style>{`

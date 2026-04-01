@@ -75,7 +75,19 @@ export default function SkillsSection() {
       ref={sectionRef}
       className="relative min-h-screen py-32 overflow-hidden"
     >
-      <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, var(--section-bg) 0%, var(--section-bg-mid) 40%, var(--section-bg-alt) 100%)" }} />
+      {/* Background: frame 287 (last frame of About→Skills transition) */}
+      <img
+        src="/frame/00287.webp"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: "center" }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(180deg, rgba(7,4,13,0.75) 0%, rgba(7,4,13,0.65) 40%, rgba(7,4,13,0.75) 100%)",
+        }}
+      />
       <div className="absolute top-20 -left-32 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%)", filter: "blur(60px)" }} />
       <div className="absolute bottom-20 -right-32 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(168,85,247,0.06) 0%, transparent 70%)", filter: "blur(60px)" }} />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(245,158,11,0.2)] to-transparent" />

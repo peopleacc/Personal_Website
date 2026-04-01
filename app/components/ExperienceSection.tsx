@@ -113,10 +113,10 @@ export default function ExperienceSection() {
             {/* ── STICKY VIEWPORT ── */}
             <div className="sticky top-0 w-full h-screen overflow-hidden">
 
-                {/* Background */}
+                {/* Background: frame 488 (last frame of Skills→Experience transition) */}
                 <img
-                    src="/image/work.jpeg"
-                    alt="Work background"
+                    src="/frame/00488.webp"
+                    alt="Experience background"
                     className="absolute inset-0 w-full h-full object-cover"
                     style={{ objectPosition: "center" }}
                 />

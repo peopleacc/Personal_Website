@@ -1,7 +1,5 @@
 import Navbar from "./components/Navbar";
-import HeroAboutSection from "./components/HeroAboutSection";
-import SkillsSection from "./components/SkillsSection";
-import ExperienceSection from "./components/ExperienceSection";
+import CinematicScroll from "./components/CinematicScroll";
 import ProjectsSection from "./components/ProjectsSection";
 import ChatSection from "./components/ChatSection";
 import Footer from "./components/Footer";
@@ -12,12 +10,11 @@ export default function Home() {
     <PageWrapper>
       <main>
         <Navbar />
-        <HeroAboutSection />
 
-        <SkillsSection />
-        <ExperienceSection />
+        {/* Single unified cinematic section: Hero → About → Skills → Experience */}
+        <CinematicScroll />
 
-        {/* ProjectsSection & rest — higher z-index, slides over the sticky Experience content */}
+        {/* ProjectsSection & rest — higher z-index, slides over */}
         <div
           style={{
             position: "relative",
@@ -29,7 +26,6 @@ export default function Home() {
               borderRadius: "2rem 2rem 0 0",
               overflow: "hidden",
               boxShadow: "0 -24px 60px rgba(0,0,0,0.7)",
-              marginTop: "-100vh",
             }}
           >
             <ProjectsSection />
