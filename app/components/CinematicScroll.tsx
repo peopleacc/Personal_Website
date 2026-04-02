@@ -204,6 +204,9 @@ const EXPERIENCES = [
    MAIN COMPONENT
    ═══════════════════════════════════════════════════════════════ */
 export default function CinematicScroll() {
+  /* ── Section order for navigation ─────────────────────────── */
+  const SECTION_ORDER = ["home", "about", "skills", "experience", "projects", "chat"];
+
   /* ── Refs ───────────────────────────────────────────────────── */
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -212,6 +215,8 @@ export default function CinematicScroll() {
   const overlayRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
+  const topBarRef = useRef<HTMLDivElement>(null);
+  const bottomBarRef = useRef<HTMLDivElement>(null);
 
   const imagesRef = useRef<(HTMLImageElement | null)[]>(Array(TOTAL_FRAMES + 2).fill(null));
   const loadedRef = useRef<boolean[]>(Array(TOTAL_FRAMES + 2).fill(false));
@@ -406,6 +411,23 @@ export default function CinematicScroll() {
         overlayRef.current.style.opacity = String(contentOverlay.toFixed(4));
       }
 
+      // ── Cinematic letterbox bars ──
+      // Fade in from p=0.01 to p=0.06, stay visible, fade out at p>0.95
+      let barOpacity = 0;
+      if (p > 0.01 && p <= 0.06) {
+        barOpacity = smoothstep((p - 0.01) / 0.05);
+      } else if (p > 0.06 && p <= 0.95) {
+        barOpacity = 1;
+      } else if (p > 0.95) {
+        barOpacity = smoothstep(1 - (p - 0.95) / 0.05);
+      }
+      if (topBarRef.current) {
+        topBarRef.current.style.opacity = String(barOpacity.toFixed(4));
+      }
+      if (bottomBarRef.current) {
+        bottomBarRef.current.style.opacity = String(barOpacity.toFixed(4));
+      }
+
       rafRef.current = requestAnimationFrame(tick);
     };
 
@@ -517,12 +539,91 @@ export default function CinematicScroll() {
           <div className="hidden lg:flex justify-center items-center" />
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2">
-          <span className="text-[10px] text-[var(--text-secondary)] tracking-[0.3em] uppercase">Scroll</span>
-          <div className="w-5 h-9 rounded-full border border-[var(--text-secondary)] flex justify-center pt-2 opacity-50">
-            <div className="w-1 h-1 rounded-full bg-[var(--accent-orange)] animate-bounce" />
+        {/* ── Cinematic Letterbox Bars (movie-style) ── */}
+        <div
+          ref={topBarRef}
+          className="absolute top-0 left-0 right-0 z-[25] pointer-events-none"
+          style={{
+            height: "8vh",
+            background: "linear-gradient(to bottom, #000000 60%, transparent 100%)",
+            opacity: 0,
+            willChange: "opacity",
+          }}
+        />
+        <div
+          ref={bottomBarRef}
+          className="absolute bottom-0 left-0 right-0 z-[25] pointer-events-none"
+          style={{
+            height: "8vh",
+            background: "linear-gradient(to top, #000000 60%, transparent 100%)",
+            opacity: 0,
+            willChange: "opacity",
+          }}
+        />
+
+        {/* Navigation: Before + Scroll indicator + Next */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3">
+          {/* Before (Previous) Section Button */}
+          <button
+            onClick={() => {
+              for (let i = SECTION_ORDER.length - 1; i >= 0; i--) {
+                const el = document.getElementById(SECTION_ORDER[i]);
+                if (el && el.getBoundingClientRect().top < -10) {
+                  el.scrollIntoView({ behavior: "smooth" });
+                  return;
+                }
+              }
+            }}
+            className="group flex items-center gap-1.5 px-3.5 py-2 rounded-full transition-all duration-500 hover:scale-105 cursor-pointer"
+            style={{
+              background: "rgba(255,255,255,0.04)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              backdropFilter: "blur(12px)",
+            }}
+            aria-label="Previous section"
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--text-secondary)] group-hover:text-[var(--accent-orange)] transition-all duration-300 group-hover:-translate-y-0.5">
+              <path d="M18 15l-6-6-6 6" />
+            </svg>
+            <span className="text-[9px] font-semibold tracking-[0.15em] uppercase text-[var(--text-secondary)] group-hover:text-[var(--accent-orange)] transition-colors duration-300">
+              Before
+            </span>
+          </button>
+
+          {/* Scroll indicator */}
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-[10px] text-[var(--text-secondary)] tracking-[0.3em] uppercase">Scroll</span>
+            <div className="w-5 h-9 rounded-full border border-[var(--text-secondary)] flex justify-center pt-2 opacity-50">
+              <div className="w-1 h-1 rounded-full bg-[var(--accent-orange)] animate-bounce" />
+            </div>
           </div>
+
+          {/* Next Section Button */}
+          <button
+            onClick={() => {
+              for (let i = 0; i < SECTION_ORDER.length; i++) {
+                const el = document.getElementById(SECTION_ORDER[i]);
+                if (el && el.getBoundingClientRect().top > 10) {
+                  el.scrollIntoView({ behavior: "smooth" });
+                  return;
+                }
+              }
+            }}
+            className="group flex items-center gap-1.5 px-3.5 py-2 rounded-full transition-all duration-500 hover:scale-105 cursor-pointer"
+            style={{
+              background: "rgba(255,255,255,0.04)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              backdropFilter: "blur(12px)",
+            }}
+            aria-label="Next section"
+          >
+            <span className="text-[9px] font-semibold tracking-[0.15em] uppercase text-[var(--text-secondary)] group-hover:text-[var(--accent-orange)] transition-colors duration-300">
+              Next
+            </span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--text-secondary)] group-hover:text-[var(--accent-orange)] transition-all duration-300 group-hover:translate-y-0.5">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
         </div>
 
         {/* ════════════════════════════════════════════════════

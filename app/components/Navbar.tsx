@@ -66,8 +66,8 @@ export default function Navbar() {
                                         key={item.href}
                                         href={item.href}
                                         className={`relative px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 ${isActive
-                                                ? "text-white bg-gradient-to-r from-[var(--accent-orange)] to-[var(--accent-pink)] shadow-[0_0_20px_rgba(245,158,11,0.25)]"
-                                                : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                                            ? "text-white bg-gradient-to-r from-[var(--accent-orange)] to-[var(--accent-pink)] shadow-[0_0_20px_rgba(245,158,11,0.25)]"
+                                            : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
                                             }`}
                                     >
                                         {item.label}
@@ -126,8 +126,8 @@ export default function Navbar() {
                                 href={item.href}
                                 onClick={() => setIsMobileOpen(false)}
                                 className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${isActive
-                                        ? "text-white bg-gradient-to-r from-[var(--accent-orange)] to-[var(--accent-pink)]"
-                                        : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[rgba(255,255,255,0.04)]"
+                                    ? "text-white bg-gradient-to-r from-[var(--accent-orange)] to-[var(--accent-pink)]"
+                                    : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[rgba(255,255,255,0.04)]"
                                     }`}
                             >
                                 {item.label}
