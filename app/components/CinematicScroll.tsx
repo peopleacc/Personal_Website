@@ -52,6 +52,24 @@ function calcOpacity(
   if (p < fadeOut) return smoothstep(1 - (p - fullEnd) / (fadeOut - fullEnd));
   return 0;
 }
+
+/* ── Canvas "cover" draw — like CSS object-fit: cover ─────────── */
+function drawCover(
+  ctx: CanvasRenderingContext2D,
+  img: HTMLImageElement,
+  cw: number,
+  ch: number
+) {
+  const iw = img.naturalWidth;
+  const ih = img.naturalHeight;
+  const scale = Math.max(cw / iw, ch / ih);
+  const sw = cw / scale;
+  const sh = ch / scale;
+  const sx = (iw - sw) / 2;
+  const sy = (ih - sh) / 2;
+  ctx.drawImage(img, sx, sy, sw, sh, 0, 0, cw, ch);
+}
+
 /* ═══════════════════════════════════════════════════════════════
    PARTICLE DATA (hero section decoration)
    ═══════════════════════════════════════════════════════════════ */
@@ -299,7 +317,7 @@ export default function CinematicScroll() {
       if (ctx && canvas && firstImg) {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        ctx.drawImage(firstImg, 0, 0, canvas.width, canvas.height);
+        drawCover(ctx, firstImg, canvas.width, canvas.height);
         lastDrawRef.current = { base: 1, blend: 0 };
       }
     } else {
@@ -351,10 +369,10 @@ export default function CinematicScroll() {
           const w = canvas!.width;
           const h = canvas!.height;
           ctx.globalAlpha = 1;
-          ctx.drawImage(baseImg, 0, 0, w, h);
+          drawCover(ctx, baseImg, w, h);
           if (nextImg && blend > 0) {
             ctx.globalAlpha = blend;
-            ctx.drawImage(nextImg, 0, 0, w, h);
+            drawCover(ctx, nextImg, w, h);
             ctx.globalAlpha = 1;
           }
           lastDrawRef.current = { base: baseFrame, blend };
